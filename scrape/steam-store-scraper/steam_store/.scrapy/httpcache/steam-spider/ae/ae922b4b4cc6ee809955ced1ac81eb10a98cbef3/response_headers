@@ -1,0 +1,6 @@
+Server: nginx
+Content-Type: text/html
+Location: https://store.steampowered.com/robots.txt
+Accept-Ranges: bytes
+X-Varnish: 2728913248 2728903622
+Date: Sat, 25 May 2019 20:53:31 GMT

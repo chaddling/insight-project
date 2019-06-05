@@ -1,0 +1,6 @@
+Server: nginx
+Content-Type: text/plain; charset=utf-8
+Cache-Control: public,max-age=28800
+Expires: Thu, 31 Jan 2019 06:22:38 GMT
+Last-Modified: Mon, 25 Jun 2018 21:49:16 GMT
+Date: Sat, 25 May 2019 20:53:38 GMT

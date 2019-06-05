@@ -1,0 +1,6 @@
+Server: nginx
+Content-Type: text/html
+Location: https://store.steampowered.com/app/414700/
+Accept-Ranges: bytes
+X-Varnish: 2803707361
+Date: Sat, 25 May 2019 21:26:52 GMT
