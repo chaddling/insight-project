@@ -86,8 +86,8 @@ for app in apps_list:
 
             genre_list = list(genre_vec.values())
 
-            insert = "INSERT INTO gamedata(`game_id`, `game_title`, `game_description`, `metacritic`, `recommendations`, `header_image`, `is_action`, `is_adventure`, `is_casual`, `is_indie`, `is_mmo`, `is_racing`, `is_rpg`, `is_simulation`, `is_sports`, `is_strategy`) \
-                        VALUES(\"{}\", \"{}\",\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\")".format(app_id, game_title, description, score, rec, header_image, *genre_list)
+            insert = "INSERT INTO gamedata(`game_id`, `game_title`, `game_description`, `metacritic`, `release_date`, `num_movies`, `num_images`,`recommendations`, `header_image`, `is_action`, `is_adventure`, `is_casual`, `is_indie`, `is_mmo`, `is_racing`, `is_rpg`, `is_simulation`, `is_sports`, `is_strategy`) \
+                        VALUES(\"{}\", \"{}\",\"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\", \"{}\")".format(app_id, game_title, description, score, rec, header_image, *genre_list)
             print('inserting', app_id)
             mysql_cursor.execute(insert)
             mysql_connection.commit()
