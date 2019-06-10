@@ -7,7 +7,7 @@ This is the project I worked on as an Insight Data Science Fellow, from ideation
 Rather than tackling this from a recommendation system point of view, I developed indie.go as a tool to help developers assess how well they use their content page to attract users, releative to other indie games that have received positive reviews.
 
 # The data
-The data I used were gather through Steam, one of the biggest online game vendors. I webscraped/queried through the Steam storefront/API. The code I used for gathering data are in [this folder](https://github.com/chaddling/insight-project/tree/master/scrape). It includes a scraper built using scrapy and 
+The data I used were gather through Steam, one of the biggest online game vendors. I webscraped/queried through the Steam storefront/API. The code I used for gathering data are in [this folder](https://github.com/chaddling/insight-project/tree/master/scrape). It includes a scraper built using ``scrapy`` and simple API queries done in Python.
 
 I processed the game content page data into a mix of ordinal/categorial features, these include:
 - Number of gameplay videos shown
