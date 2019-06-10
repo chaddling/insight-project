@@ -1,5 +1,5 @@
 # Insight project: indie.go
-This is the project I worked on as an Insight Data Science Fellow, from ideation, data analysis, modeling to deploying a webapp which can be seen at [indie.go](http://3.13.31.175).
+This is the project I worked on as an Insight Data Science Fellow, from ideation, data analysis, modeling to deploying a webapp which can be seen at [indie.go](http://3.13.31.175). The slides of the demo presentation can be found [here](https://tinyurl.com/y3xsxgz8).
 
 # What it does
 "Independent genre games", or indie games, are produced by small companies/developers and over the recent years there has been an exponential rise in the number of indie-genre games in the market. While the top earners in the genre remain successful, the median/mean sales and revenues have both gone down - that means a lot of the small developers simply don't get noticed on online vendor platforms.
@@ -36,4 +36,4 @@ In the [examples](https://github.com/chaddling/insight-project/tree/master/examp
 The main script [train_rf_classifier.py](https://github.com/chaddling/insight-project/blob/master/train_rf_classifier.py) performs hyperparameter tuning and cross-validation, and evaluates the model on a held-out test dataset using ROC-AUC score. 
 
 # Improvements
-Given more time, it would be interesting to explore if the text content of the game description has a correlation to review scores and produce more predictive power in the model. At the end of the day, "attractiveness" of the game should also be largely related to the actual content/aesthetics of the images/videos of the gameplay that is shown to the users. 
+Given more time, it would be interesting to explore if the text content of the game description, or the content/aesthetics of the images/videos of the gameplay that is shown to the users. These are more powerful correlators to "attractiveness" of content presentation instead of the coarse-grained features I have used for the project.
