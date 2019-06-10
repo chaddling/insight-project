@@ -18,7 +18,7 @@ I processed the game content page data into a mix of ordinal/categorial features
 
 On top of that, once each game has received sufficient number of reviews, it receives a sentiment rating (Positive/Mixed/Negative) on Steam, which would give the game higher relevance in the recommendation system. The sentiment rating is related to the "% of positive reviews" that the game has received.
 
-I scraped the game pages for both pages that are <b>labeled</b> as well as <b>unlabeled</b> games, which have little user interactions and no sentiment rating.
+I scraped the game pages for both pages that are <b>labeled</b> as well as <b>unlabeled</b> games, which correspond to games that have received a sentiment rating/score and games have not.
 
 # Modeling
 Essentially, I trained/validated a classification model using the labeled game pages and their features, and used the model to label the unlabeled pages. This gives:
