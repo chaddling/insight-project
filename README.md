@@ -6,6 +6,8 @@ This is the project I worked on as an Insight Data Science Fellow, from ideation
 
 Rather than tackling this from a recommendation system point of view, I developed indie.go as a tool to help developers assess how well they use their content page to attract users, releative to other indie games that have received positive reviews.
 
+Showing to users that you as a game developer takes care of your content page presentation and that you interact with the players/address their concerns appeals to other users. Specifically, Steam has "Curator" accounts that have between 10-100k followers. Targeting these accounts for reviews - making them more likely to try your game - will have snowballing impact on your game's popularity.
+
 # The data
 The data I used were gather through Steam, one of the biggest online game vendors. I webscraped/queried through the Steam storefront/API. The code I used for gathering data are in [this folder](https://github.com/chaddling/insight-project/tree/master/scrape). It includes a scraper built using ``scrapy`` and simple API queries done in Python.
 
