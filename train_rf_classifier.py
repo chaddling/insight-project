@@ -18,12 +18,9 @@ n_classes = 3
 
 data = pd.read_csv('data/features_vec_all.csv')
 
-#feature_names = ['num_pre', 'num_post', 'mean_time', 'len_description',
-#       'num_movies', 'num_images', 'is_action', 'is_adventure', 'is_casual', 'is_mmo', 'is_racing', 'is_rpg', 'is_simulation',
-#       'is_sports', 'is_strategy']
-
 feature_names = ['num_pre', 'num_post', 'mean_time', 'len_description',
-       'num_movies', 'num_images']#, 'is_mmo', 'is_strategy']
+       'num_movies', 'num_images', 'is_action', 'is_adventure', 'is_casual', 'is_mmo', 'is_racing', 'is_rpg', 'is_simulation',
+       'is_sports', 'is_strategy']
 
 X = data[feature_names]
 
@@ -55,7 +52,7 @@ rf = RandomForestClassifier()
 # and then the random foest classifier
 pipeline = Pipeline([('sm', sm), ('rf', rf)])
 
-kf = StratifiedKFold(n_splits=5)
+kf = StratifiedKFold(n_splits=10)
 
 params = {'rf__n_estimators': list(range(6,20)),
           'rf__max_depth': list(range(5,20)),
@@ -70,7 +67,6 @@ grid = GridSearchCV(estimator=pipeline,
 
 grid.fit(X_train, Y_train)
 
-
 print(grid.best_estimator_)
 print('best score = ', grid.best_score_)
 cv_results = grid.cv_results_
@@ -82,8 +78,6 @@ print('mean test score +/- std =', cv_results['mean_test_score'].mean(), cv_resu
 # look at the held out data set score
 Y_pred = grid.predict(X_test)
 print('held out score =', f1_score(Y_pred, Y_test, average='macro'))
-
-print(grid.best_estimator_[1].feature_importances_)
 
 Y_score = grid.predict_proba(X_test)
 
