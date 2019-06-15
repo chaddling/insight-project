@@ -41,5 +41,21 @@ The main script [train_rf_classifier.py](https://github.com/chaddling/insight-pr
 # Diagnostics
 Given the low performance of the model and the nature of the data, I was suspicious of the default feature importance output generate by the Random Forest model:
 
+![](https://raw.githubusercontent.com/chaddling/insight-project/master/png/features_ranked.png)
+
+In tree-based models, because continuous/high-cardinality features can be split in more ways than one-hot encoded ones, this generates a bias in feature importances calculated based on Gini impurity (the default method) when the features are of mixed types.
+
+I performed feature importance analysis using a permutation-based method, which calculates for each feature, the mean change in model performance when the values of that feature are randomly permuted.
+
+![](https://raw.githubusercontent.com/chaddling/insight-project/master/png/permutation_importances.png)
+
+Overall, each feature receives very low importance score, which explains the model performance. 
+
+Despite the weak importance scores, a genre feature (MMO = "massively online multiplayer") stood out: this type of game, due to the online nature of its play, tends to have high number of updates / high update frequency (as regular maintenance is neccessary). Further analysis (see boxplots in [png](https://github.com/chaddling/insight-project/tree/master/png) folder) shows that they contribute most strongly to the outliers in the distributions of other features and this increased the discriminative power of the model.
+
+The code for calculating feature importances is found in [feature_importances.py](https://github.com/chaddling/insight-project/blob/master/feature_importances.py) and in the notebook [permutation_importance.ipynb](https://github.com/chaddling/insight-project/blob/master/examples/permutation_importance.ipynb) I did an implementation of permutation importance on my own.
+
 # Improvements
-Given more time, it would be interesting to explore if the text content of the game description, or the content/aesthetics of the images/videos of the gameplay that is shown to the users. These are more powerful correlators to "attractiveness" of content presentation instead of the coarse-grained features I have used for the project.
+<b> Other features </b>
+
+Given more time, it would be interesting to explore if the text content of the game description, or the content/aesthetics of the images/videos of the gameplay that is shown to the users. These are more powerful correlators to "attractiveness" of content presentation instead of the coarse-grained features I have used for the classification approach.
