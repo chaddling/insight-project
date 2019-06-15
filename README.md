@@ -1,5 +1,5 @@
 # Insight project: indie.go
-This is the project I worked on as an Insight Data Science Fellow, from ideation, data analysis, modeling to deploying a webapp which can be seen at [indie.go](http://3.13.31.175). The slides of the demo presentation can be found [here](https://tinyurl.com/y3xsxgz8).
+This is the project I worked on as an Insight Data Science Fellow, from ideation, data analysis, modeling to deploying a webapp which can be seen at [indie.go](http://3.13.31.175). The slides of the demo presentation can be found [here](https://docs.google.com/presentation/d/e/2PACX-1vQ4grjTdVG8p0DdcCGoHgg7qJA5PeqIHgSYGvmCRxjaP7nLXPPd_ILKI-F0FPCxVdfZ9BUkdwbxuS3N/pub?start=false&loop=false&delayms=15000).
 
 # What it does
 "Independent genre games", or indie games, are produced by small companies/developers and over the recent years there has been an exponential rise in the number of indie-genre games in the market. While the top earners in the genre remain successful, the median/mean sales and revenues have seen a > 50% decrease - that means a lot of the small developers simply don't get noticed on online vendor platforms.
