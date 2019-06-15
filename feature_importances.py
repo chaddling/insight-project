@@ -24,24 +24,12 @@ def get_label_names(indices, plot_label_names):
 with open('pickle_rf_model.pkl', 'rb') as file:
     rf = pickle.load(file)
 
-# load scaler
-with open('pickle_scaler.pkl', 'rb') as file:
-    scaler = pickle.load(file)
-
 data = pd.read_csv('data/features_vec_all.csv') # this does not include the no review ones
 
 X = data[feature_names]
 
-# log transform on the data and rescale
-X['num_pre'] = np.log(1 + 100*X['num_pre'])
-X['num_post'] = np.log(1 + 200*X['num_post'])
-X['mean_time'] = np.log(1 + 200*X['mean_time'])
-X['len_description'] = np.log(1+X['len_description'])
-
 X = X.values
 Y = data['sentiment'].values
-
-scaler.fit_transform(X[:,0:5])
 
 # fit the model using the whole dataset
 # with that we'll calculate the feature importances

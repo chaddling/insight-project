@@ -3,7 +3,6 @@ import numpy as np
 import pickle
 import matplotlib.pyplot as plt
 
-from sklearn.preprocessing import label_binarize, StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import f1_score
 from sklearn.model_selection import GridSearchCV, train_test_split, StratifiedKFold, learning_curve
@@ -24,20 +23,8 @@ feature_names = ['num_pre', 'num_post', 'mean_time', 'len_description',
 
 X = data[feature_names]
 
-# log transform on the data and rescale
-X['num_pre'] = np.log(1 + 100*X['num_pre'])
-X['num_post'] = np.log(1 + 200*X['num_post'])
-X['mean_time'] = np.log(1 + 200*X['mean_time'])
-X['len_description'] = np.log(1+X['len_description'])
-
 X = X.values
 Y = data['sentiment'].values
-
-# rescale only the continuous variables by (x- mu) / std
-scaler = StandardScaler(copy=False)
-scaler.fit_transform(X[:,0:5])
-
-#Y = label_binarize(Y, classes=[-1,0,1])
 
 # split the data:
 # 1. training data is then further over sampled in the pipeline then split up
@@ -52,7 +39,7 @@ rf = RandomForestClassifier()
 # and then the random foest classifier
 pipeline = Pipeline([('sm', sm), ('rf', rf)])
 
-kf = StratifiedKFold(n_splits=10)
+kf = StratifiedKFold(n_splits=5)
 
 params = {'rf__n_estimators': list(range(6,20)),
           'rf__max_depth': list(range(5,20)),
@@ -90,7 +77,3 @@ plot_roc_curve(3, Y_test, Y_score)
 #pkl_filename = "pickle_rf_model.pkl"
 #with open(pkl_filename, 'wb') as file:
 #    pickle.dump(grid.best_estimator_, file)
-
-#scl_filename = "pickle_scaler.pkl"
-#with open(scl_filename, 'wb') as file:
-#    pickle.dump(scaler, file)
